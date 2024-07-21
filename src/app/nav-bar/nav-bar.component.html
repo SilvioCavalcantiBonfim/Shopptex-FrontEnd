@@ -1,0 +1,22 @@
+<nav dynamicBackground>
+  <div class="container nav-container">
+    <div class="shops">
+      <span class="material-symbols-outlined"> menu </span>
+      <span>Lojas</span>
+    </div>
+    <div class="shop-info">
+      <div class="shops">
+        <span class="material-symbols-outlined"> storefront </span>
+        <span>{{(shopInfo() | async)?.info?.name}}</span>
+      </div>
+      <div class="shops">
+        <span class="material-symbols-outlined"> category </span
+        ><span>{{(shopInfo() | async)?.info?.department}}</span>
+      </div>
+      <div class="shops">
+        <span class="material-symbols-outlined"> account_circle </span
+        ><span>{{(shopInfo() | async)?.info?.owner}}</span>
+      </div>
+    </div>
+  </div>
+</nav>

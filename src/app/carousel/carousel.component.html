@@ -1,0 +1,15 @@
+<div class="carousel-container">
+  @for (image of images; track $index) {
+    @if ($index === currentIndex) {
+      <div class="carousel-slide" [class.active]="$index === currentIndex" @fadeInOut>
+        <img [src]="image" alt="Image {{ $index + 1 }}"/>
+      </div>
+    }
+  }
+  <button class="bt left" (click)="prev()">
+    <span class="material-symbols-outlined"> chevron_left </span>
+  </button>
+  <button class="bt right" (click)="next()">
+    <span class="material-symbols-outlined"> chevron_right </span>
+  </button>
+</div>

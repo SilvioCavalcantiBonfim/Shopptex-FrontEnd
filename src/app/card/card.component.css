@@ -1,0 +1,33 @@
+.card-container {
+  width: 220px;
+  aspect-ratio: 1 / 1;
+}
+
+.card-container img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container h2,
+.card-container p {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.card-container h2 svg {
+  position: absolute;
+  top: -50%;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: var(--placeholder-color);
+}
+
+.card-container p {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

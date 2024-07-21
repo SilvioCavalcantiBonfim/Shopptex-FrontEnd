@@ -1,0 +1,32 @@
+<section class="container banner-container">
+  <section class="list-banner">
+    @if(getAllShops() | async; as shops){ @if(shops.length != 0){
+    <div class="shop-menu">
+      @for (shop of shops; track $index) {
+      <app-shop-list [info]="shop" [index]="$index"></app-shop-list>
+      }
+    </div>
+    }@else {
+    <section class="load">
+      <app-loading></app-loading>
+    </section>
+    } }
+  </section>
+  <section class="banner">
+    <app-carousel></app-carousel>
+    <div class="banner-2" dynamicBackground>
+      <section class="info">
+        <h2>Devolução Gratuita</h2>
+        <p>Devolução Gratuita até 30 dias após a compra</p>
+      </section>
+      <section class="info">
+        <h2>Frete grátis</h2>
+        <p>Frete grátis a partir de R$99</p>
+      </section>
+      <section class="info">
+        <h2>Desconto especial</h2>
+        <p>Desconto de 20% em produtos selecionados</p>
+      </section>
+    </div>
+  </section>
+</section>

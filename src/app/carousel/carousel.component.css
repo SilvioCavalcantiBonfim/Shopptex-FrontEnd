@@ -1,0 +1,47 @@
+.carousel-container {
+  position: relative;
+  max-width: 840px;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  aspect-ratio: 1460 / 422;
+  position: relative;
+}
+
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.bt {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.bt:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}

@@ -1,1 +1,112 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+:root {
+  --placeholder-color: #757575;
+  --background: #F1F1F1;
+}
+
+*::placeholder {
+  color: var(--placeholder-color);
+}
+
+body {
+  background-color: var(--background);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: #fff;
+  /* Cor de fundo dos itens */
+  border: 1px solid #ddd;
+  /* Borda dos itens */
+  padding: 10px;
+  /* Espaçamento interno dos itens */
+  margin-bottom: 10px;
+  /* Espaçamento entre os itens */
+  width: 100%;
+  /* Itens ocupam toda a largura do contêiner */
+}
+
+/* Layout responsivo: Coloca os itens em linha em telas maiores */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    /* Organiza itens em linha em telas maiores */
+    flex-wrap: wrap;
+    /* Permite que os itens movam para a linha seguinte */
+    justify-content: space-between;
+    /* Espaça itens igualmente */
+  }
+
+  .item {
+    width: calc(50% - 10px);
+    /* Largura dos itens ajustada para 50% da largura do contêiner menos a margem */
+    margin-bottom: 0;
+    /* Remove a margem inferior dos itens em telas maiores */
+  }
+}
+
+/* Layout responsivo: Ajuste adicional para telas maiores */
+@media (min-width: 1024px) {
+  .item {
+    width: calc(33.333% - 10px);
+    /* Largura dos itens ajustada para 33.333% da largura do contêiner menos a margem */
+  }
+}
+
+.debug {
+  border: solid 1px red;
+}
+
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-size: medium;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: small;
+}
+
+footer {
+  margin-top: 30px;
+  align-items: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  transition: all 0.3s;
+  color: var(--placeholder-color);
+  background-color: #000;
+  display: flex;
+  justify-content: space-around;
+  font-size: small;
+  align-items: center;
+}
+a, a:hover, a:visited, a:active{
+  color: inherit;
+  text-decoration: none;
+}
+
+footer div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}

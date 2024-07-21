@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "Shopptex",
+    "color": "#0000ff",
+    "owner": "Silvio Cavalcanti Bonfim",
+    "department": "Eletrônicos"
+  },
+  "products": [
+    {
+      "photo": "https://exemplo.com/imagem1.jpg",
+      "name": "Smartphone XYZ",
+      "price": 1999.99,
+      "is_promotion": true
+    },
+    {
+      "photo": "https://exemplo.com/imagem2.jpg",
+      "name": "Notebook ABC",
+      "price": 3499.9,
+      "is_promotion": false
+    },
+    {
+      "photo": "https://exemplo.com/imagem3.jpg",
+      "name": "Fone de Ouvido Bluetooth",
+      "price": 299.99,
+      "is_promotion": true
+    },
+    {
+      "photo": "https://exemplo.com/imagem4.jpg",
+      "name": "Smart TV 50\"",
+      "price": 2599.99,
+      "is_promotion": false
+    },
+    {
+      "photo": "https://exemplo.com/imagem5.jpg",
+      "name": "Caixa de Som Portátil",
+      "price": 199.99,
+      "is_promotion": true
+    }
+  ]
+}
