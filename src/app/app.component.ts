@@ -61,7 +61,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.shopService.ngOnInit();
     this.styleService.ngOnInit();
     this.subTitle$ = this.shopService.currentShop$.subscribe(
       (shop) => (document.title = `Shopptex | ${shop.info.name}`)

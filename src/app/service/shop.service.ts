@@ -18,12 +18,12 @@ import { Product } from '../model/product';
 @Injectable({
   providedIn: 'root',
 })
-export class ShopService implements OnInit, OnDestroy{
-
-  private sub$ :Subscription | undefined;
+export class ShopService implements OnInit, OnDestroy {
+  private sub$: Subscription | undefined;
 
   private apiList: string[] = [
-    // 'http://localhost:8080',
+    'http://localhost:8080',
+    'http://localhost:3000',
   ];
 
   private shopSubject = new BehaviorSubject<Shop[]>([]);
@@ -45,14 +45,21 @@ export class ShopService implements OnInit, OnDestroy{
 
   private loadShops(): void {
     const shopRequests = this.apiList.map((url) =>
-      lastValueFrom(this.requestData(url))
+      this.requestData(url)
     );
-    this.sub$ = forkJoin(shopRequests).subscribe((responses) => {
-      const allShops = responses.flat();
-      this.shopSubject.next(allShops);
 
-      this.infoSubject.next(allShops.flat().map((a) => a.info));
-    });
+    shopRequests.forEach(requestObservable => {
+      requestObservable.subscribe(shop => this.addShop(shop))
+    })
+  }
+
+  private addShop(shop: Shop): void{
+    if(this.currentShop.value === nullShop)
+      this.currentShop.next(shop);
+    let infos: Info[] = [shop.info, ...this.infoSubject.value];
+    this.infoSubject.next(infos);
+    let shops: Shop[] = [shop, ...this.shopSubject.value];
+    this.shopSubject.next(shops);
   }
 
   private requestData(url: string): Observable<Shop> {
@@ -60,7 +67,7 @@ export class ShopService implements OnInit, OnDestroy{
       this.httpClient.get<Info>(`${url}/info`).pipe(
         catchError((error) => {
           console.error(`Failed to fetch shop info in ${url}.`);
-          return of(new Info(url,'#FF0000','Error','Error')); // retorna um objeto Info vazio em caso de erro
+          return of(new Info(url, '#FF0000', 'Error', 'Error')); // retorna um objeto Info vazio em caso de erro
         })
       ),
       this.httpClient.get<Product[]>(`${url}/products`).pipe(
@@ -70,14 +77,7 @@ export class ShopService implements OnInit, OnDestroy{
         })
       ),
     ]).pipe(
-      map(([info, products]) => {
-        let shop = {
-          info: info as Info,
-          products: products as Product[],
-        } as Shop;
-        this.currentShop.next(shop);
-        return shop;
-      })
+      map(([info, products]) => ({info, products}))
     );
   }
 
