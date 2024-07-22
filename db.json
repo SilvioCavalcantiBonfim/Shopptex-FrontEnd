@@ -7,31 +7,31 @@
   },
   "products": [
     {
-      "photo": "https://exemplo.com/imagem1.jpg",
+      "photo": "https://pngimg.com/uploads/smartphone/smartphone_PNG8527.png",
       "name": "Smartphone XYZ",
       "price": 1999.99,
       "is_promotion": true
     },
     {
-      "photo": "https://exemplo.com/imagem2.jpg",
+      "photo": "https://img.us.news.samsung.com/us/wp-content/uploads/2017/12/14140038/Notebook-9-Pen-Side-1.jpg",
       "name": "Notebook ABC",
       "price": 3499.9,
       "is_promotion": false
     },
     {
-      "photo": "https://exemplo.com/imagem3.jpg",
+      "photo": "https://static.netshoes.com.br/produtos/fone-de-ouvido-bluetooth-philips-upbeat/06/756-9734-006/756-9734-006_zoom2.jpg?",
       "name": "Fone de Ouvido Bluetooth",
       "price": 299.99,
       "is_promotion": true
     },
     {
-      "photo": "https://exemplo.com/imagem4.jpg",
+      "photo": "https://media.4rgos.it/i/Argos/8101619_R_Z001A",
       "name": "Smart TV 50\"",
       "price": 2599.99,
       "is_promotion": false
     },
     {
-      "photo": "https://exemplo.com/imagem5.jpg",
+      "photo": "https://images.colombo.com.br/produtos/792312/792312_caixa_som_boombox_jbl_01_z.jpg",
       "name": "Caixa de Som Portátil",
       "price": 199.99,
       "is_promotion": true
